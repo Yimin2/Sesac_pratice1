@@ -1,0 +1,64 @@
+.red {
+    color: red;
+}
+
+.blue {
+    color: blue;
+}
+
+.green {
+    color: green;
+}
+
+.font-100 {
+    font-size: 100px;
+}
+
+.font-50 {
+    font-size: 50px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
+
+#bold {
+    font-weight: bold;
+}
+
+[href] {
+    text-decoration: none;
+    color: black;
+}
+
+
+[href="naver.com"] {
+    color: darkorchid;
+}
+
+/*자식 선택자*/
+#parent > .child {
+    color: red;
+}
+
+/*자손 선택자*/
+body p {
+    text-align: center;
+}
+
+/*혼합 선택자*/
+span.red {
+    color: #ed4242;
+}
+
+span.green {
+    color: #005500;
+}
