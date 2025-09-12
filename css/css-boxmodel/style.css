@@ -1,0 +1,58 @@
+.padding-box {
+    /* 개별 padding 설정 */
+    padding-left: 0.75rem;
+    padding-right: 1rem;
+    padding-top: 2rem;
+    padding-bottom: 0.75rem;
+}
+
+.border-box {
+    /* 테두리 설정 */
+    border: 10px solid black;
+    border-radius: 10rem;
+}
+
+.margin-box {
+    /* 마진 설정 */
+    margin: 20px;
+}
+
+/*더 작은 마진 중첩으로 인해 무시됨*/
+.margin-1 {
+    height: 100px;
+    background-color: #ed4242;
+    margin-bottom:  100px;
+}
+
+.margin-2 {
+    height: 100px;
+    background-color: #ffa500;
+    margin-top:  200px;
+}
+
+.box {
+    width: 100px;
+    height: 100px;
+    background-color: black;
+    border: none;
+    border-radius: 0;
+    margin-bottom: 2rem;
+    padding:  20px;
+}
+
+/*너비, 높이 계산은 컨텐츠로만 계산*/
+.content-box {
+    box-sizing: content-box;
+}
+
+/* 너비, 높이 계산을 컨텐츠, 패딩, 테두리 계산*/
+.border-box {
+    box-sizing: border-box;
+}
+
+/* box-sizing 기본값을 변경*/
+* {
+    box-sizing:  border-box;
+    margin: 0px;
+    padding: 0px;
+}
