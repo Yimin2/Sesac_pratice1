@@ -1,0 +1,60 @@
+.box-1 {
+    width: 100px;
+    height: 100px;
+    background-color: burlywood;
+    margin: 2rem;
+}
+
+/* relative 포지션
+ 기본적으로 static 처럼 배치
+ 이동 속성 (top, bottom, left, right)를 부여
+ 이 동기준은 원래 위치를 기준 */
+
+.relative {
+    position: relative;
+}
+
+/* 왼쪽을 기준으로 요소 이동 */
+.left-2 {
+    left: 2rem;
+    top: 2rem;
+}
+
+/* absolute 포지션
+부모 요소(relative, absolute, fixed)가 필요
+위치(top, bottom, left, right) 속성으로 이동
+다른 요소에 영향을 주지 않음 */
+.parent-box {
+    position: relative;
+    height: 300px;
+    background-color: royalblue;
+}
+
+.box-2 {
+    width: 100px;
+    height: 100px;
+    background-color: burlywood;
+}
+
+.absolute {
+    position: absolute;
+}   
+
+.top-50 {
+    top: 50px;
+}
+
+.right-50 {
+    right: 50px;
+}   
+
+.box-3 {
+    height: 200px;
+    width: 100%;
+    background-color: #ed4242;
+}
+
+.fixed {
+    position: fixed;
+    top: 0px;
+}
