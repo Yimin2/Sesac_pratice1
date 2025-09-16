@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- 문서 인코딩 및 기본 설정 -->
+	<meta charset="utf-8"/>
+
+	<!-- 폰트 프리로드 -->
+	<link crossorigin=""
+	      href="https://fonts.gstatic.com/"
+	      rel="preconnect"/>
+	<link
+			as="style"
+			href="https://fonts.googleapis.com/css2?display=swap&family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&family=Plus+Jakarta+Sans%3Awght%40400%3B500%3B700%3B800"
+			onload="this.rel='stylesheet'"
+			rel="stylesheet"
+	/>
+
+	<!-- 페이지 제목 -->
+	<title>Stitch Design</title>
+
+	<!-- 파비콘 -->
+	<link href="data:image/x-icon;base64,"
+	      rel="icon"
+	      type="image/x-icon"/>
+
+	<!-- Tailwind CSS 및 플러그인 -->
+	<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+	<!-- Material Icons -->
+	<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+	      rel="stylesheet"/>
+
+	<!-- 커스텀 스타일 -->
+	<style>
+        /* 최소 높이 설정 */
+        body {
+            min-height: max(884px, 100dvh);
+        }
+	</style>
+
+	<!-- 추가 스타일 (중복) -->
+	<style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+	</style>
+</head>
+
+<body class="bg-gray-50">
+<!-- 메인 컨테이너 -->
+<div
+		class="relative flex h-auto min-h-screen w-full flex-col justify-between overflow-x-hidden group/design-root"
+		style='font-family: "Plus Jakarta Sans", "Noto Sans", sans-serif;'
+>
+	<!-- 컨텐츠 영역 -->
+	<div>
+		<!-- 헤더 -->
+		<header class="sticky top-0 z-10 flex items-center justify-between bg-white/80 p-4 pb-3 backdrop-blur-sm">
+			<!-- 페이지 제목 -->
+			<h1 class="text-xl font-bold text-slate-800">게시판</h1>
+
+			<!-- 검색 버튼 -->
+			<button class="flex h-10 w-10 items-center justify-center rounded-full bg-transparent text-slate-600">
+				<span class="material-symbols-outlined text-2xl">search</span>
+			</button>
+		</header>
+
+		<!-- 메인 컨텐츠 -->
+		<main class="flex flex-col">
+			<!-- 인기 게시판 섹션 -->
+			<section class="py-6">
+				<!-- 섹션 제목 -->
+				<h2 class="px-4 pb-4 text-lg font-bold text-slate-800">인기 게시판</h2>
+
+				<!-- 수평 스크롤 카드 컨테이너 -->
+				<div class="flex snap-x snap-mandatory scroll-p-4 auto-cols-[85%] gap-3 overflow-x-auto px-4 [-ms-scrollbar-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+					<!-- 고양이 게시판 카드 -->
+					<div class="w-full flex-shrink-0 snap-start rounded-xl">
+						<div class="relative aspect-video w-full overflow-hidden rounded-xl">
+							<!-- 배경 이미지 -->
+							<img
+									class="h-full w-full object-cover"
+									src="https://lh3.googleusercontent.com/aida-public/AB6AXuDfzbPDF4L6otx5nyqaCGuKmH5QohqLP3Vckj2wyweg8B2hiTOryDL8KHhXmANEUljLhL80lbvxgElseGHCX60yE62uQ6j6tA0x_PJTwrqkliooQt8u9CkjU4CD4isfLjnevo67RrIMGS2RX7Of4J1FSpOkEIlMK6u2K6Xb1igkJ3nQwgZQHAbeokcTx9-ZTLrdzdhQGLuwSZzi4Ixh0F81IiqDRuldR6nJjdPKookI_4-OZpYlAh2oascUfmp0crAS5gQbmeI8FXI"
+							/>
+							<!-- 그라데이션 오버레이 -->
+							<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+							<!-- 게시판 이름 -->
+							<p class="absolute bottom-3 left-3 text-base font-medium text-white">고양이 게시판</p>
+						</div>
+					</div>
+
+					<!-- 강아지 게시판 카드 -->
+					<div class="w-full flex-shrink-0 snap-start rounded-xl">
+						<div class="relative aspect-video w-full overflow-hidden rounded-xl">
+							<!-- 배경 이미지 -->
+							<img
+									class="h-full w-full object-cover"
+									src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4hKHwJcTM9Yk4GidKTF-dWKTw5FYSjeLC3NQZRhYKBaIcCP3JsJ8ZXGVVRtAXTuaR1Tl-UqK53FAZjIRRwlKUz7Qt4qEPbZbt6mTUGm7laF75FUJ7TrAlyFkHUTRIr667FB0vZgnOlHEqJ-NqLLQ9EebGhrSSPyx8TYryPv6cqbSA5B18HptZzp_Q0TKSGqgtNZ75XW53AdUJ3CU_shMvnLqkSlm7ZwIHzzEuplftc2KzWpSPP271lZIE-mfNeYFyBQFrg3xV1Zw"
+							/>
+							<!-- 그라데이션 오버레이 -->
+							<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+							<!-- 게시판 이름 -->
+							<p class="absolute bottom-3 left-3 text-base font-medium text-white">강아지 게시판</p>
+						</div>
+					</div>
+
+					<!-- 게임 게시판 카드 -->
+					<div class="w-full flex-shrink-0 snap-start rounded-xl">
+						<div class="relative aspect-video w-full overflow-hidden rounded-xl">
+							<!-- 배경 이미지 -->
+							<img
+									class="h-full w-full object-cover"
+									src="https://lh3.googleusercontent.com/aida-public/AB6AXuAXtPCjyBA9nD2pz3wH7ylktw69YKU1SHR-hUsiVJGEbkTD5qjsxHSQYrJZHpd5AueY-8dACxCTv4V3AX-_VRUKEdt25zu7LCflfmuZtZOmqmpvNAuKTYnLOiGR4TZ7flX0P1IrbyxzdLkj3XGcqjj9GOV_dPiHOA8JPJD3SkoTKCD3ElGed81eIOovutbQOML0BtJe5iaSzg9V8f14w0Rtq_6bd5hHZ7TRZgMOk_zSZ0Fn_jEti_lbRcN3IqA_dGIKITuBGvtaMtM"
+							/>
+							<!-- 그라데이션 오버레이 -->
+							<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+							<!-- 게시판 이름 -->
+							<p class="absolute bottom-3 left-3 text-base font-medium text-white">게임 게시판</p>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- 전체 게시판 섹션 -->
+			<section class="flex flex-col bg-white py-6">
+				<!-- 섹션 제목 -->
+				<h2 class="px-4 pb-3 text-lg font-bold text-slate-800">전체 게시판</h2>
+
+				<!-- 게시판 그리드 -->
+				<div class="grid grid-cols-1 gap-y-1 px-4 md:grid-cols-2 md:gap-x-4 lg:grid-cols-4">
+					<!-- 일상 게시판 -->
+					<a
+							class="flex cursor-pointer items-center gap-4 rounded-lg p-3 hover:bg-gray-100 md:flex-col md:items-start md:border md:border-gray-200 md:p-4"
+							href="#"
+					>
+						<!-- 아이콘 -->
+						<div class="flex size-12 items-center justify-center rounded-xl bg-blue-100 text-blue-600 md:size-14">
+							<span class="material-symbols-outlined text-2xl md:text-3xl">edit_note</span>
+						</div>
+						<!-- 텍스트 정보 -->
+						<div class="flex-1">
+							<p class="text-base font-medium text-slate-800">일상 게시판</p>
+							<p class="mt-1 text-sm text-slate-500">최신 게시물을 확인하세요!</p>
+						</div>
+						<!-- 화살표 아이콘 (모바일 전용) -->
+						<span class="material-symbols-outlined text-slate-400 md:hidden">chevron_right</span>
+					</a>
+
+					<!-- 유머 게시판 -->
+					<a
+							class="flex cursor-pointer items-center gap-4 rounded-lg p-3 hover:bg-gray-100 md:flex-col md:items-start md:border md:border-gray-200 md:p-4"
+							href="#"
+					>
+						<!-- 아이콘 -->
+						<div class="flex size-12 items-center justify-center rounded-xl bg-amber-100 text-amber-600 md:size-14">
+							<span class="material-symbols-outlined text-2xl md:text-3xl">sentiment_very_satisfied</span>
+						</div>
+						<!-- 텍스트 정보 -->
+						<div class="flex-1">
+							<p class="text-base font-medium text-slate-800">유머 게시판</p>
+							<p class="mt-1 text-sm text-slate-500">최신 게시물을 확인하세요!</p>
+						</div>
+						<!-- 화살표 아이콘 (모바일 전용) -->
+						<span class="material-symbols-outlined text-slate-400 md:hidden">chevron_right</span>
+					</a>
+
+					<!-- 음악 게시판 -->
+					<a
+							class="flex cursor-pointer items-center gap-4 rounded-lg p-3 hover:bg-gray-100 md:flex-col md:items-start md:border md:border-gray-200 md:p-4"
+							href="#"
+					>
+						<!-- 아이콘 -->
+						<div class="flex size-12 items-center justify-center rounded-xl bg-rose-100 text-rose-600 md:size-14">
+							<span class="material-symbols-outlined text-2xl md:text-3xl">music_note</span>
+						</div>
+						<!-- 텍스트 정보 -->
+						<div class="flex-1">
+							<p class="text-base font-medium text-slate-800">음악 게시판</p>
+							<p class="mt-1 text-sm text-slate-500">최신 게시물을 확인하세요!</p>
+						</div>
+						<!-- 화살표 아이콘 (모바일 전용) -->
+						<span class="material-symbols-outlined text-slate-400 md:hidden">chevron_right</span>
+					</a>
+
+					<!-- 영화 게시판 -->
+					<a
+							class="flex cursor-pointer items-center gap-4 rounded-lg p-3 hover:bg-gray-100 md:flex-col md:items-start md:border md:border-gray-200 md:p-4"
+							href="#"
+					>
+						<!-- 아이콘 -->
+						<div class="flex size-12 items-center justify-center rounded-xl bg-indigo-100 text-indigo-600 md:size-14">
+							<span class="material-symbols-outlined text-2xl md:text-3xl">movie</span>
+						</div>
+						<!-- 텍스트 정보 -->
+						<div class="flex-1">
+							<p class="text-base font-medium text-slate-800">영화 게시판</p>
+							<p class="mt-1 text-sm text-slate-500">최신 게시물을 확인하세요!</p>
+						</div>
+						<!-- 화살표 아이콘 (모바일 전용) -->
+						<span class="material-symbols-outlined text-slate-400 md:hidden">chevron_right</span>
+					</a>
+
+					<!-- 스포츠 게시판 -->
+					<a
+							class="flex cursor-pointer items-center gap-4 rounded-lg p-3 hover:bg-gray-100 md:flex-col md:items-start md:border md:border-gray-200 md:p-4"
+							href="#"
+					>
+						<!-- 아이콘 -->
+						<div class="flex size-12 items-center justify-center rounded-xl bg-green-100 text-green-600 md:size-14">
+							<span class="material-symbols-outlined text-2xl md:text-3xl">sports_soccer</span>
+						</div>
+						<!-- 텍스트 정보 -->
+						<div class="flex-1">
+							<p class="text-base font-medium text-slate-800">스포츠 게시판</p>
+							<p class="mt-1 text-sm text-slate-500">최신 게시물을 확인하세요!</p>
+						</div>
+						<!-- 화살표 아이콘 (모바일 전용) -->
+						<span class="material-symbols-outlined text-slate-400 md:hidden">chevron_right</span>
+					</a>
+
+					<!-- 여행 게시판 -->
+					<a
+							class="flex cursor-pointer items-center gap-4 rounded-lg p-3 hover:bg-gray-100 md:flex-col md:items-start md:border md:border-gray-200 md:p-4"
+							href="#"
+					>
+						<!-- 아이콘 -->
+						<div class="flex size-12 items-center justify-center rounded-xl bg-sky-100 text-sky-600 md:size-14">
+							<span class="material-symbols-outlined text-2xl md:text-3xl">flight</span>
+						</div>
+						<!-- 텍스트 정보 -->
+						<div class="flex-1">
+							<p class="text-base font-medium text-slate-800">여행 게시판</p>
+							<p class="mt-1 text-sm text-slate-500">최신 게시물을 확인하세요!</p>
+						</div>
+						<!-- 화살표 아이콘 (모바일 전용) -->
+						<span class="material-symbols-outlined text-slate-400 md:hidden">chevron_right</span>
+					</a>
+
+					<!-- 식탁 게시판 -->
+					<a
+							class="flex cursor-pointer items-center gap-4 rounded-lg p-3 hover:bg-gray-100 md:flex-col md:items-start md:border md:border-gray-200 md:p-4"
+							href="#"
+					>
+						<!-- 아이콘 -->
+						<div class="flex size-12 items-center justify-center rounded-xl bg-orange-100 text-orange-600 md:size-14">
+							<span class="material-symbols-outlined text-2xl md:text-3xl">restaurant</span>
+						</div>
+						<!-- 텍스트 정보 -->
+						<div class="flex-1">
+							<p class="text-base font-medium text-slate-800">식탁 게시판</p>
+							<p class="mt-1 text-sm text-slate-500">최신 게시물을 확인하세요!</p>
+						</div>
+						<!-- 화살표 아이콘 (모바일 전용) -->
+						<span class="material-symbols-outlined text-slate-400 md:hidden">chevron_right</span>
+					</a>
+				</div>
+			</section>
+		</main>
+	</div>
+
+	<!-- 하단 네비게이션 -->
+	<footer class="sticky bottom-0 border-t border-gray-200 bg-white/80 pb-3 pt-2 backdrop-blur-sm">
+		<nav class="flex justify-around">
+			<!-- 홈 탭 -->
+			<a class="flex flex-1 flex-col items-center justify-end gap-1 text-slate-500"
+			   href="#">
+				<span class="material-symbols-outlined text-2xl">home</span>
+				<p class="text-xs font-medium tracking-wide">홈</p>
+			</a>
+
+			<!-- 게시판 탭 (활성화) -->
+			<a class="flex flex-1 flex-col items-center justify-end gap-1 text-blue-600"
+			   href="#">
+                    <span
+		                    class="material-symbols-outlined text-2xl"
+		                    style="font-variation-settings: 'FILL' 1"
+                    >tag</span>
+				<p class="text-xs font-medium tracking-wide">게시판</p>
+			</a>
+
+			<!-- 알림 탭 -->
+			<a class="flex flex-1 flex-col items-center justify-end gap-1 text-slate-500"
+			   href="#">
+				<span class="material-symbols-outlined text-2xl">notifications</span>
+				<p class="text-xs font-medium tracking-wide">알림</p>
+			</a>
+
+			<!-- 마이페이지 탭 -->
+			<a class="flex flex-1 flex-col items-center justify-end gap-1 text-slate-500"
+			   href="#">
+				<span class="material-symbols-outlined text-2xl">person</span>
+				<p class="text-xs font-medium tracking-wide">마이페이지</p>
+			</a>
+		</nav>
+	</footer>
+</div>
+</body>
+</html>
