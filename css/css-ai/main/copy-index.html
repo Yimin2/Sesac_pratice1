@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+	      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible"
+	      content="ie=edge">
+	<title>Document</title>
+
+	<!-- 구글 Material Symbols -->
+	<link rel="stylesheet"
+	      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"/>
+
+	<!--daysi UI-->
+	<link href="https://cdn.jsdelivr.net/npm/daisyui@5"
+	      rel="stylesheet"
+	      type="text/css"/>
+	<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+	<link rel="stylesheet"
+	      href="./style.css">
+</head>
+<body>
+
+<!-- 헤더 영역 -->
+<header class="flex justify-between items-center sticky top-0 z-50 bg-white/95">
+	<a href="">
+		<h1 class="text-2xl font-bold m-5">게시판</h1>
+	</a>
+	<!--검색-->
+	<!-- Open the modal using ID.showModal() method -->
+	<button class="btn btn-ghost mx-5"
+	        onclick="my_modal_2.showModal()">
+		<span class="material-symbols-outlined p-5 rounded-lg">search</span>
+	</button>
+	<dialog id="my_modal_2"
+	        class="modal">
+		<div class="modal-box">
+			<fieldset class="fieldset">
+				<legend class="fieldset-legend text-xl">게시판 검색</legend>
+				<input type="text"
+				       class="input w-full"
+				       placeholder="Type here"/>
+				<p class="text-right text-gray-400">Enter</p>
+			</fieldset>
+		</div>
+		<form method="dialog"
+		      class="modal-backdrop">
+			<button>close</button>
+		</form>
+	</dialog>
+</header>
+
+<!-- 메인 콘텐츠 영역 -->
+<main>
+	<section class="py-6">
+		<h2 class="px-10 font-bold text-xl">인기 게시판</h2>
+		<div class="flex gap-3 overflow-x-auto px-4 snap-x snap-mandatory">
+			<div
+					class="relative flex-shrink-0 aspect-video w-[85%] overflow-x-auto px-10 pt-5 snap-center">
+				<!--이미지-->
+				<a href="">
+					<img
+							class="h-full w-full object-cover rounded-xl"
+							src="https://lh3.googleusercontent.com/aida-public/AB6AXuDfzbPDF4L6otx5nyqaCGuKmH5QohqLP3Vckj2wyweg8B2hiTOryDL8KHhXmANEUljLhL80lbvxgElseGHCX60yE62uQ6j6tA0x_PJTwrqkliooQt8u9CkjU4CD4isfLjnevo67RrIMGS2RX7Of4J1FSpOkEIlMK6u2K6Xb1igkJ3nQwgZQHAbeokcTx9-ZTLrdzdhQGLuwSZzi4Ixh0F81IiqDRuldR6nJjdPKookI_4-OZpYlAh2oascUfmp0crAS5gQbmeI8FXI"
+					/>
+				</a>
+				<span class="absolute bottom-4 left-14 text-white font-bold text-shadow-lg">고양이 게시판</span>
+			</div>
+			<div class="relative flex-shrink-0 aspect-video w-[85%] overflow-hidden px-10 pt-5 snap-center ">
+				<!--이미지-->
+				<a href="">
+					<img
+							class="h-full w-full object-cover rounded-xl"
+							src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4hKHwJcTM9Yk4GidKTF-dWKTw5FYSjeLC3NQZRhYKBaIcCP3JsJ8ZXGVVRtAXTuaR1Tl-UqK53FAZjIRRwlKUz7Qt4qEPbZbt6mTUGm7laF75FUJ7TrAlyFkHUTRIr667FB0vZgnOlHEqJ-NqLLQ9EebGhrSSPyx8TYryPv6cqbSA5B18HptZzp_Q0TKSGqgtNZ75XW53AdUJ3CU_shMvnLqkSlm7ZwIHzzEuplftc2KzWpSPP271lZIE-mfNeYFyBQFrg3xV1Zw"
+					/>
+				</a>
+				<span class="absolute bottom-4 left-14 text-white font-bold text-shadow-lg">강아지 게시판</span>
+			</div>
+			<div class="relative flex-shrink-0 aspect-video w-[85%] overflow-hidden px-10 pt-5 snap-center ">
+				<!--이미지-->
+				<a href="">
+					<img
+							class="h-full w-full object-cover rounded-xl"
+							src="https://lh3.googleusercontent.com/aida-public/AB6AXuAXtPCjyBA9nD2pz3wH7ylktw69YKU1SHR-hUsiVJGEbkTD5qjsxHSQYrJZHpd5AueY-8dACxCTv4V3AX-_VRUKEdt25zu7LCflfmuZtZOmqmpvNAuKTYnLOiGR4TZ7flX0P1IrbyxzdLkj3XGcqjj9GOV_dPiHOA8JPJD3SkoTKCD3ElGed81eIOovutbQOML0BtJe5iaSzg9V8f14w0Rtq_6bd5hHZ7TRZgMOk_zSZ0Fn_jEti_lbRcN3IqA_dGIKITuBGvtaMtM"
+					/>
+				</a>
+				<span class="absolute bottom-4 left-14 text-white font-bold text-shadow-lg">게임 게시판</span>
+			</div>
+		</div>
+	</section>
+	<section>
+		<h2 class="px-10 py-5 font-bold text-xl ">전체 게시판</h2>
+		<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-10 px-10">
+			<a href="">
+				<div
+						class="flex justify-between border border-gray-200 rounded-xl py-10 px-6 hover:bg-gray-100 shadow-md">
+					<div>
+						<div class="flex size-12 items-center justify-center rounded-xl bg-blue-100 text-blue-600 md:size-14">
+							<span class="material-symbols-outlined text-2xl md:text-3xl">edit_note</span>
+						</div>
+						<br>일상 게시판
+						<p class="text-gray-700">최근 게시물을 확인하세요!</p>
+					</div>
+					<div class="flex items-center md:hidden">
+					<span class="material-symbols-outlined text-gray-600">
+					arrow_forward_ios
+				</span></div>
+				</div>
+			</a>
+			<a href="">
+				<div
+						class="flex justify-between border border-gray-200 rounded-xl py-10 px-6 hover:bg-gray-100 shadow-md">
+					<div>
+						<div class="flex size-12 items-center justify-center rounded-xl bg-amber-100 text-amber-600 md:size-14">
+							<span class="material-symbols-outlined text-2xl md:text-3xl">sentiment_very_satisfied</span>
+						</div>
+						<br>유머 게시판
+						<p class="text-gray-700">최근 게시물을 확인하세요!</p>
+					</div>
+					<div class="flex items-center md:hidden">
+					<span class="material-symbols-outlined text-gray-600">
+					arrow_forward_ios
+				</span></div>
+				</div>
+			</a>
+			<a href="">
+				<div
+						class="flex justify-between border border-gray-200 rounded-xl py-10 px-6 hover:bg-gray-100 shadow-md">
+					<div>
+						<div class="flex size-12 items-center justify-center rounded-xl bg-rose-100 text-rose-600 md:size-14">
+							<span class="material-symbols-outlined text-2xl md:text-3xl">music_note</span>
+						</div>
+						<br>음악 게시판
+						<p class="text-gray-700">최근 게시물을 확인하세요!</p>
+					</div>
+					<div class="flex items-center md:hidden">
+					<span class="material-symbols-outlined text-gray-600">
+					arrow_forward_ios
+				</span></div>
+				</div>
+			</a>
+			<a href="">
+				<div class="flex justify-between border border-gray-200 rounded-md py-10 px-6 hover:bg-gray-100 shadow-md">
+					<div>
+						<div class="flex size-12 items-center justify-center rounded-xl bg-indigo-100 text-indigo-600 md:size-14">
+							<span class="material-symbols-outlined text-2xl md:text-3xl">movie</span>
+						</div>
+						<br>영화 게시판
+						<p class="text-gray-700">최근 게시물을 확인하세요!</p>
+					</div>
+					<div class="flex items-center md:hidden">
+					<span class="material-symbols-outlined text-gray-600">
+					arrow_forward_ios
+				</span></div>
+				</div>
+			</a>
+			<a href="">
+				<div class="flex justify-between border border-gray-200 rounded-md py-10 px-6 hover:bg-gray-100 shadow-md">
+					<div>
+						<div class="flex size-12 items-center justify-center rounded-xl bg-green-100 text-green-600 md:size-14">
+							<span class="material-symbols-outlined text-2xl md:text-3xl">sports_soccer</span>
+						</div>
+						<br>스포츠 게시판
+						<p class="text-gray-700">최근 게시물을 확인하세요!</p>
+					</div>
+					<div class="flex items-center md:hidden">
+					<span class="material-symbols-outlined text-gray-600">
+					arrow_forward_ios
+				</span></div>
+				</div>
+			</a>
+			<a href="">
+				<div class="flex justify-between border border-gray-200 rounded-md py-10 px-6 hover:bg-gray-100 shadow-md">
+					<div>
+						<div class="flex size-12 items-center justify-center rounded-xl bg-sky-100 text-sky-600 md:size-14">
+							<span class="material-symbols-outlined text-2xl md:text-3xl">flight</span>
+						</div>
+						<br>여행 게시판
+						<p class="text-gray-700">최근 게시물을 확인하세요!</p>
+					</div>
+					<div class="flex items-center md:hidden">
+					<span class="material-symbols-outlined text-gray-600">
+					arrow_forward_ios
+				</span></div>
+				</div>
+			</a>
+			<a href="">
+				<div class="flex justify-between border border-gray-200 rounded-md py-10 px-6 hover:bg-gray-100 shadow-md">
+					<div>
+						<div class="flex size-12 items-center justify-center rounded-xl bg-orange-100 text-orange-600 md:size-14">
+							<span class="material-symbols-outlined text-2xl md:text-3xl">restaurant</span>
+						</div>
+						<br>식탁 게시판
+						<p class="text-gray-700">최근 게시물을 확인하세요!</p>
+					</div>
+					<div class="flex items-center md:hidden">
+					<span class="material-symbols-outlined text-gray-600">
+					arrow_forward_ios
+				</span></div>
+				</div>
+			</a>
+		</div>
+	</section>
+</main>
+
+<!-- 푸터 영역 -->
+<footer class="sticky bottom-0 border-t border-gray-200 bg-white/80 py-4 backdrop-blur-sm mt-10">
+	<nav class="flex justify-around">
+		<a href="#">
+			<div class="flex flex-col items-center text-blue-700 px-10">
+				<span class="material-symbols-outlined text-2xl">home</span>
+				홈
+			</div>
+		</a>
+		<a href="#">
+			<div class="flex flex-col items-center px-10">
+			<span
+					class="material-symbols-outlined text-2xl"
+			>tag</span>
+				게시판
+			</div>
+		</a>
+		<a href="#">
+			<div class="flex flex-col items-center px-10">
+				<span class="material-symbols-outlined text-2xl">notifications</span>
+				알림
+			</div>
+		</a>
+		<a href="#">
+			<div class="flex flex-col items-center px-10">
+				<span class="material-symbols-outlined text-2xl">person</span>
+				마이페이지
+			</div>
+		</a>
+	</nav>
+</footer>
+
+</body>
+</html>
