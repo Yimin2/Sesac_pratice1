@@ -12,5 +12,8 @@
     ],
     "deny": [],
     "ask": []
-  }
+  },
+  "disabledMcpjsonServers": [
+    "upstash-context7"
+  ]
 }
