@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//Users/mingulee/IdeaProjects/Sesac_pratice1/**)",
+      "Bash(javac:*)",
+      "Bash(java:*)",
+      "Bash(./gradlew:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
