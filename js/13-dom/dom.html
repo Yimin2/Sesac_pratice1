@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+	      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible"
+	      content="ie=edge">
+	<title>Document</title>
+	<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+<body>
+<button>클릭</button>
+<button onclick="getProducts()">클릭</button>
+<div id="parent"></div>
+</body>
+<script>
+    const DOMAIN_NAME = "https://dummyjson.com"
+    const parentTag = document.querySelector("#parent")
+
+    async function getProducts() {
+        const config = await axios.get(`${DOMAIN_NAME}/products`)
+        const data = config.data
+        const products = data.products
+        products.forEach((elements) => {
+            const title = elements.title
+            const pTag = document.createElement("p")
+            pTag.textContent = title
+            parentTag.append(pTag)
+        })
+    }
+
+    const buttonTag = document.querySelector("button")
+    buttonTag.addEventListener("click", () => {
+		getProducts()
+	})
+
+    async function testConnect() {
+        const config = {
+            url: `${DOMAIN_NAME}/test`, method: "get"
+        }
+        const response = await axios(config)
+        console.log(response.data)
+    }
+
+    async function main() {
+        await testConnect()
+        // await getProducts()
+    }
+
+    main()
+</script>
+</body>
+</html>
