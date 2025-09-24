@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+	      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible"
+	      content="ie=edge">
+	<title>Document</title>
+	<style>
+		.red {
+			color: red;
+		}
+
+		.green {
+			color: green;
+		}
+	</style>
+</head>
+<body>
+<div class="parent">
+	<div class="child"
+	     id="first">
+		<p></p>
+		<p></p>
+		<p></p>
+	</div>
+	<div class="child"></div>
+	<div class="child"></div>
+	<div class="child"></div>
+	<p></p>
+	<p></p>
+	<p></p>
+</div>
+<a href=>hi</a>
+<h1 id="red">red</h1>
+<h1 id="green">green</h1>
+</body>
+<script>
+    const divEl1 = document.querySelector("div");
+    const divEl2 = document.querySelectorAll("div");
+    console.log(divEl1);
+    console.log(divEl2);
+
+    divEl2.forEach((index, num) => (console.log(num, index)))
+
+    const divEl3 = document.querySelectorAll(".child")
+    divEl3.forEach((e) => (console.log(e)))
+
+    /*const firstChild = document.querySelector("#first")
+    firstChild.textContent = "첫번째 자식"*/
+
+    const pEl = document.querySelectorAll("p");
+    pEl.forEach((e) => (e.textContent = "P 태그"))
+
+    const pEl2 = document.querySelectorAll("#first > p")
+    pEl2.forEach((e) => (e.textContent ="first의 P 태그"))
+
+    const divEl4 = document.querySelector(".parent")
+    divEl4.textContent = ""
+
+    const link = document.querySelector("a")
+    link.setAttribute("href", "https://dailyalgo.kr")
+
+    const red =  document.querySelector("#red")
+	const green =  document.querySelector("#green")
+
+    red.classList.add("red")
+    green.classList.add("green")
+
+</script>
+</html>

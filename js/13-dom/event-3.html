@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+	      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible"
+	      content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+
+<form action="">
+	<input type="text">
+	<button>클릭</button>
+</form>
+<p id="message"></p>
+<a href="https://www.naver.com">naver</a>
+<script>
+	// input 이벤트
+	const inputTag = document.querySelector("input")
+	inputTag.addEventListener("input", (event) => {
+		const value = event.target.value
+		const pTag = document.querySelector("#message")
+		if(value.length > 8) {
+            pTag.textContent = "8글자 이하로 입력하세요"
+		} else {
+            pTag.textContent = ""
+		}
+    })
+
+	// button 이벤트
+    const buttonTag = document.querySelector("button")
+
+    buttonTag.addEventListener("click", () => {
+        alert("클릭")
+        const text = buttonTag.textContent
+        alert(text)
+    })
+
+    buttonTag.addEventListener("click", (event) => {
+      console.log((event.target))
+    })
+
+	//a 태그 이벤트
+	const aTag = document.querySelector("a")
+	aTag.addEventListener("click", (event) => {
+        event.preventDefault()
+	})
+</script>
+</body>
+</html>
