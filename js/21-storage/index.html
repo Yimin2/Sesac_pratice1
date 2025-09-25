@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+	      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible"
+	      content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+<button>조회</button>
+<button id="create">생성</button>
+<button id="delete">삭제</button>
+
+<script>
+    localStorage.setItem("key","value")
+
+    const button = document.querySelector("button")
+    const deleteButton = document.querySelector("#delete")
+    const createButton = document.querySelector("#create")
+
+    button.addEventListener("click", () => {
+        const data = localStorage.getItem("key")
+	    alert(data)
+    })
+    createButton.addEventListener("click", () => {
+        localStorage.setItem("key","value")
+        alert("생성 되었습니다.")
+    })
+
+    deleteButton.addEventListener("click", () => {
+        localStorage.removeItem("key")
+        alert("삭제되었습니다.")
+    })
+</script>
+</body>
+</html>
