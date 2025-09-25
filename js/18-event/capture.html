@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+	      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible"
+	      content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+<div id="parent">
+	<div class="child">
+		<button id="button">클릭</button>
+	</div>
+</div>
+
+<script>
+    const parent = document.querySelector("#parent")
+    const child = document.querySelector(".child")
+    const button = document.querySelector("#button")
+
+    parent.addEventListener("click", () => {
+            console.log("parent")
+        },
+        {capture: true})
+    child.addEventListener("click", () => {
+            console.log("child")
+        },
+        {capture: true})
+
+    button.addEventListener("click", () => {
+            console.log("button")
+        },
+        {capture: true})
+</script>
+</body>
+</html>
