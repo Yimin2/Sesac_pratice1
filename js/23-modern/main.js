@@ -95,3 +95,21 @@ function func2({name, age, job}) {
 }
 
 func2(obj5)
+
+
+const user5 = {
+    name: "홍길동",
+    address: {
+        city: "서울",
+    },
+};
+
+console.log(user5?.address?.city) // 서울
+console.log(user5?.job?.title) // undefined
+
+const value1 = null
+const defaultValue = "defaultValue"
+
+let variable = value1 ?? defaultValue
+
+console.log(variable)
