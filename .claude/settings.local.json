@@ -8,7 +8,11 @@
       "Bash(git add:*)",
       "Bash(git commit:*)",
       "Bash(git push:*)",
-      "Bash(git pull:*)"
+      "Bash(git pull:*)",
+      "Bash(npm start)",
+      "Bash(npm run dev:*)",
+      "Bash(npm install:*)",
+      "Bash(npx tailwindcss:*)"
     ],
     "deny": [],
     "ask": []
