@@ -8,7 +8,8 @@ function RootLayout(props) {
             <Link to="/">홈페이지 </Link>
             <Link to="/about">소개 </Link>
             <Link to="/profile">사용자 정보 </Link>
-            <Link to="/auth">인증페이지</Link>
+            <Link to="/auth">인증페이지 </Link>
+            <Link to="/posts">포스트</Link>
         </div>
         <Outlet/>
     </div>);

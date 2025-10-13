@@ -11,12 +11,18 @@ import Profile from "../pages/RootPages/Profile.jsx";
 import AuthHome from "../pages/AuthPages/AuthHome.jsx";
 import Login from "../pages/AuthPages/Login.jsx";
 import Signup from "../pages/AuthPages/Signup.jsx";
+import PostList from "../pages/RootPages/PostList.jsx";
+import PostDetail from "../pages/RootPages/PostDetail.jsx";
 
 const router = createBrowserRouter([{
     path: "/", Component: RootLayout, children: [{
         index: true, Component: Home
     }, {
         path: "about", Component: About
+    }, {
+        path: "posts", Component: PostList
+    }, {
+        path: "posts/:postId", Component: PostDetail
     }, {
         Component: ProtectedLayout, children: [{
             path: "profile", Component: Profile
