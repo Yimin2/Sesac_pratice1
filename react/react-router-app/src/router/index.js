@@ -1,17 +1,32 @@
 // 페이지 링크 컴포넌트
 import {createBrowserRouter} from "react-router-dom"
-import Home from "../pages/Home.jsx";
-import About from "../pages/About.jsx";
-import Profile from "../pages/Profile.jsx";
+import RootLayout from "../layout/RootLayout.jsx";
+import AuthLayout from "../layout/AuthLayout.jsx";
+
+import Home from "../pages/RootPages/Home.jsx";
+import About from "../pages/RootPages/About.jsx";
+import Profile from "../pages/RootPages/Profile.jsx";
+
+import AuthHome from "../pages/AuthPages/AuthHome.jsx";
+import Login from "../pages/AuthPages/Login.jsx";
+import Signup from "../pages/AuthPages/Signup.jsx";
 
 const router = createBrowserRouter([{
-    path: "/", Component: Home,
+    path: "/", Component: RootLayout, children: [{
+        index: true, Component: Home
+    }, {
+        path: "about", Component: About
+    }, {
+        path: "Profile", Component: Profile
+    }]
 }, {
-    path: "/about", Component: About,
-},{
-    path: "/profile", Component: Profile,
-},
-
-])
+    path: "auth", Component: AuthLayout, children: [{
+        index: true, Component: AuthHome
+    }, {
+        path: "login", Component: Login
+    }, {
+        path: "signup", Component: Signup
+    }]
+}])
 
 export default router
