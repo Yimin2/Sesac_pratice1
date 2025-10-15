@@ -1,0 +1,46 @@
+import React, {useEffect, useState} from 'react';
+import {useDispatch, useSelector} from "react-redux";
+import {useNavigate} from "react-router-dom";
+import {resetIsSignup, signup} from "../store/authSlice.js";
+
+function signUp(props) {
+    const [email, setEmail] = useState("")
+    const [password, setPassword] = useState("")
+    const dispatch = useDispatch()
+    const navigate = useNavigate()
+    const isSignup = useSelector((state) => state.auth.isSignup)
+    const error = useSelector((state) => state.auth.error)
+    
+    function handleSubmit (e) {
+        e.preventDefault()
+        dispatch(signup({
+            email : email,
+            password : password
+        }))
+    }
+
+    useEffect(() => {
+        if(isSignup) {
+            alert("회원가입을 성공했습니다. 메일함을 확인해주세요.")
+            dispatch(resetIsSignup())
+            navigate("/")
+        }
+    }, [isSignup, dispatch, navigate]);
+    
+    return (<div>
+        <form onSubmit={(e) => {
+            handleSubmit(e)
+        }}>
+            <input type="email" value={email} onChange={(e) => {
+                setEmail(e.target.value)
+            }}/>
+            <input type="password" value={password} onChange={(e) => {
+                setPassword(e.target.value)
+            }}/>
+            <input type="submit" value ="회원가입"/>
+
+        </form>
+    </div>);
+}
+
+export default signUp;
