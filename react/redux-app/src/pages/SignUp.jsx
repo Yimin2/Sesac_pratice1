@@ -31,10 +31,10 @@ function signUp(props) {
         <form onSubmit={(e) => {
             handleSubmit(e)
         }}>
-            <input type="email" value={email} onChange={(e) => {
+            <input className="border-2" type="email" value={email} onChange={(e) => {
                 setEmail(e.target.value)
             }}/>
-            <input type="password" value={password} onChange={(e) => {
+            <input className="border-2" type="password" value={password} onChange={(e) => {
                 setPassword(e.target.value)
             }}/>
             <input type="submit" value ="회원가입"/>

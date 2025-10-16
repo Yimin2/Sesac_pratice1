@@ -15,31 +15,30 @@ function Login(props) {
     const error = useSelector((state) => state.auth.error)
 
     useEffect(() => {
-        if(token) {
+        if (token) {
             alert("로그인 되었습니다")
-            navigate("/")
+            navigate("/profile")
         }
     }, [token, navigate]);
 
-    useEffect(() => {
-        if(error) {
-            alert(`로그인 실패: ${error.error_description || error.msg || "알 수 없는 오류"}`)
-        }
-    }, [error]);
-    function handleSubmit (e) {
+
+    function handleSubmit(e) {
         e.preventDefault()
         dispatch(login({email: email, password: password}))
     }
+
     return (<div>
         <form onSubmit={(e) => {
             handleSubmit(e)
         }}>
-            <input type="email"
+            <input className="border-2"
+                   type="email"
                    value={email}
                    onChange={(e) => {
                        setEmail(e.target.value)
                    }}/>
-            <input type="password"
+            <input className="border-2"
+                   type="password"
                    value={password}
                    onChange={(e) => {
                        setPassword(e.target.value)

@@ -1,9 +1,8 @@
 import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
 import axios from "axios";
 
-
-const SUPABASE_URL = "https://jfsjmxtokcazzpykrxwp.supabase.co"
-const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Impmc2pteHRva2NhenpweWtyeHdwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjAyMDE4NjksImV4cCI6MjA3NTc3Nzg2OX0.n-IAryEgUti5atr30MGszQ-fzStuW3BZDRMuaPPIefw"
+const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL
+const SUPABASE_ANON_KEY = import.meta.env.VITE_SUPABASE_ANON_KEY
 
 const signup = createAsyncThunk("auth/signup", async (data, {rejectWithValue}) => {
     try {
@@ -36,8 +35,22 @@ const login = createAsyncThunk("auth/login", async (data, {rejectWithValue}) => 
         return rejectWithValue(error.response.data)
     }
 })
+
+const logout = createAsyncThunk("auth/logout", async (_, {rejectWithValue, getState}) => {
+    try {
+        const config = {
+            url: `${SUPABASE_URL}/auth/v1/logout`, method: "POST", headers: {
+                "Content-type": "application/json", apikey: SUPABASE_ANON_KEY, Authorization: `Bearer ${getState().auth.token}`
+            },
+        };
+        const response = await axios(config)
+        return response.data
+    } catch (error) {
+        return rejectWithValue(error.response.data)
+    }
+})
 const initialState = {
-    token: null, error: null, isSignup: false,
+    token: localStorage.getItem('token') || null, error: null, isSignup: false,
 }
 const authSlice = createSlice({
     name: "auth", initialState, reducers: {
@@ -51,8 +64,8 @@ const authSlice = createSlice({
             state.error = action.payload
         }).addCase(login.fulfilled, (state, action) => {
             state.token = action.payload["access_token"]
-        }).addCase(login.rejected, (state, action) => {
-            state.error = action.payload
+        }).addCase(logout.fulfilled, (state) => {
+            state.token = null
         })
     }
 })
@@ -60,4 +73,4 @@ const authSlice = createSlice({
 
 export const {resetIsSignup} = authSlice.actions
 export default authSlice.reducer
-export {signup, login}
+export {signup, login, logout}
